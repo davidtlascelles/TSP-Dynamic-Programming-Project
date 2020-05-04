@@ -223,21 +223,23 @@ def extreme_points(points):
     return min_point, max_point
 
 
-print()
 print("Input problem size:")
-print("(Problem sizes under 20 recommended)")
+print("(Problem sizes must be 2 or more. Problem sizes under 20 is recommended)")
 size = int(input())
+
+
+test_sum = 0
 coordinates = create_random_points(size)
 
 matrix = create_matrix(coordinates)
 
 # Print the matrix with formatting
-mtrx = DataFrame(matrix)
-pandas.set_option('display.max_rows', None)
-pandas.set_option('display.max_columns', None)
-pandas.set_option('display.width', None)
-pandas.set_option('display.max_colwidth', None)
-print(DataFrame(mtrx).round(2))
+mtrx = pandas.DataFrame(matrix)
+pandas.pandas.set_option('display.max_rows', None)
+pandas.pandas.set_option('display.max_columns', None)
+pandas.pandas.set_option('display.width', None)
+pandas.pandas.set_option('display.max_colwidth', None)
+print(pandas.DataFrame(mtrx).round(2))
 
 start = time.time()
 optimal_path, optimal_cost = traveling_salesman(matrix)
